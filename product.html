@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Landing Page</title>
+	<!-- Tailwind -->
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<!-- Alpine -->
+	<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+	<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+	<!-- AOS -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<!-- Custom style -->
+	<link rel="stylesheet" href="css/skilline.css" />
+	<!-- Poppins font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="antialiased">
+	<!-- navbar -->
+	<div x-data="{ open: false }" class="w-full text-gray-700 bg-white">
+		<div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
+			<div class="flex flex-row items-center justify-between py-6">
+				<div class="relative md:mt-8">
+					<a href="#"
+						class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">Medkit</a>
+				</div>
+				<button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+					<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+						<path x-show="!open" fill-rule="evenodd"
+							d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+							clip-rule="evenodd"></path>
+						<path x-show="open" fill-rule="evenodd"
+							d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</button>
+			</div>
+			<nav :class="{ 'transform md:transform-none': !open, 'h-full': open }"
+				class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 scale-y-0">
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+					href="index.html">Home</a>
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+					href="product.html">Product</a>
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+					href="about.html">About Us</a>
+			</nav>
+		</div>
+	</div>
+	<div class="bg-mintcream">
+		<div class="max-w-screen-xl px-8 mx-auto flex flex-col gap-8 lg:flex-row items-start py-20">
+			<!--Left Col-->
+			<div class="flex flex-col w-full lg:w-9/24 justify-center items-start text-center">
+				<img src="img/product1.png">
+				<div class="flex justify-center gap-4 mt-8 w-full">
+					<div><img src="img/product2.png" class=""></div>
+					<div><img src="img/product3.png" class=""></div>
+					<div><img src="img/product4.png" class=""></div>
+				</div>
+			</div>
+			<!--Right Col-->
+			<div class="w-full lg:w-15/24 relative ">
+				<h1 class="text-5xl font-semibold mt-6">Family’s Medical Kit</h1>
+				<div class="text-4xl font-medium mt-6 text-purple-900">
+					<span class="border-t-4 border-purple-900">
+						150.000
+					</span>
+					<span>VND</span>
+				</div>
+				<div class="text-lg mt-4">
+					<p>
+						This box contain: 1 Paracetamol box, 1 Oresol box, 1 Pantenol cream, 1 Betadine, 1 eugika, 1
+						decolgen, 1efferalgan, 3 bandages, Medicated Oil, some medical instruments.
+					</p>
+					<p>
+						Weight: 1.5kg
+					</p>
+					<p>
+						Area: 60cm * 30cm * 30cm
+					</p>
+					<p>
+						If you need any changes made to the box, please chat with us before making a purchase.
+					</p>
+				</div>
+				<div class="mt-4 text-2xl gap-4">
+					<span class="">Quantity: </span>
+					<input class="ml-2 text-center" type="number" value="1" style='width:50px' />
+				</div>
+				<div class="flex justify-center mt-8">
+					<a href="cart.html" class="bg-red-500 text-white h-14 w-52 text-xl font-semibold rounded-xl text-center flex justify-center flex-col text-center">
+						Add to cart
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- AOS init -->
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+</body>
+
+</html>
